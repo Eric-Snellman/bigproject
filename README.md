@@ -1,8 +1,8 @@
-# Projektarbete: Databases
+# Projektarbete: Databases practice through an inventory site
 
 ## Projektbeskrivning
 
-Skriv en kort beskrivning av vad du ska bygga och vad applikationen ska kunna göra.
+I plan on making a inventory website to help me understand and use databases so that i can later use said experience to make actual websites for companies
 
 ## Tekniker
 

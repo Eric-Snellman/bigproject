@@ -1,13 +1,235 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>project</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>Inventory Management System</title>
+</head>
+
+<body>
+
+  <header>
+    <h1>Inventory Management System</h1>
+
+    <nav>
+      <ul>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#suppliers">Suppliers</a></li>
+        <li><a href="#movements">Stock Movements</a></li>
+        <li><a href="#reports">Reports</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="dashboard">
+      <h2>Dashboard</h2>
+
+      <div>
+        <h3>Total Products</h3>
+        <p>125</p>
+      </div>
+
+      <div>
+        <h3>Total Stock</h3>
+        <p>850 items</p>
+      </div>
+
+      <div>
+        <h3>Low Stock Products</h3>
+        <p>8</p>
+      </div>
+
+      <div>
+        <h3>Total Inventory Value</h3>
+        <p>€12,500</p>
+      </div>
+    </section>
+
+    <section id="products">
+      <h2>Products</h2>
+
+      <h3>Add New Product</h3>
+
+      <form>
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="productName" required>
+
+        <label for="productPrice">Price (€):</label>
+        <input type="number" id="productPrice" name="productPrice" step="0.01" required>
+
+        <label for="productQuantity">Quantity:</label>
+        <input type="number" id="productQuantity" name="productQuantity" required>
+
+        <label for="productCategory">Category:</label>
+        <select id="productCategory" name="productCategory">
+          <option value="">Select Category</option>
+          <option value="peripherals">Peripherals</option>
+          <option value="monitors">Monitors</option>
+          <option value="computers">Computers</option>
+        </select>
+
+        <label for="productSupplier">Supplier:</label>
+        <input type="text" id="productSupplier" name="productSupplier">
+
+        <button type="submit">Add Product</button>
+      </form>
+
+      <h3>Product List</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Category</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Gaming Mouse</td>
+            <td>€59.99</td>
+            <td>25</td>
+            <td>Peripherals</td>
+            <td>
+              <button type="button">Edit</button>
+              <button type="button">Delete</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Mechanical Keyboard</td>
+            <td>€89.99</td>
+            <td>8</td>
+            <td>Peripherals</td>
+            <td>
+              <button type="button">Edit</button>
+              <button type="button">Delete</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Gaming Monitor</td>
+            <td>€199.99</td>
+            <td>4</td>
+            <td>Monitors</td>
+            <td>
+              <button type="button">Edit</button>
+              <button type="button">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="categories">
+      <h2>Categories</h2>
+
+      <form>
+        <label for="categoryName">Category Name:</label>
+        <input type="text" id="categoryName" name="categoryName">
+
+        <button type="submit">Add Category</button>
+      </form>
+
+      <ul>
+        <li>Peripherals</li>
+        <li>Monitors</li>
+        <li>Computers</li>
+      </ul>
+    </section>
+
+    <section id="suppliers">
+      <h2>Suppliers</h2>
+
+      <form>
+        <label for="supplierName">Supplier Name:</label>
+        <input type="text" id="supplierName" name="supplierName">
+
+        <label for="supplierEmail">Email:</label>
+        <input type="email" id="supplierEmail" name="supplierEmail">
+
+        <label for="supplierPhone">Phone:</label>
+        <input type="tel" id="supplierPhone" name="supplierPhone">
+
+        <button type="submit">Add Supplier</button>
+      </form>
+
+      <h3>Supplier List</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>TechSupply</td>
+            <td>info@techsupply.example</td>
+            <td>040 123 4567</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="movements">
+      <h2>Stock Movements</h2>
+
+      <form>
+        <label for="movementProduct">Product:</label>
+        <select id="movementProduct" name="movementProduct">
+          <option value="">Select Product</option>
+          <option value="1">Gaming Mouse</option>
+          <option value="2">Mechanical Keyboard</option>
+          <option value="3">Gaming Monitor</option>
+        </select>
+
+        <label for="movementType">Movement Type:</label>
+        <select id="movementType" name="movementType">
+          <option value="in">Stock In</option>
+          <option value="out">Stock Out</option>
+        </select>
+
+        <label for="movementQuantity">Quantity:</label>
+        <input type="number" id="movementQuantity" name="movementQuantity">
+
+        <button type="submit">Record Movement</button>
+      </form>
+    </section>
+
+    <section id="reports">
+      <h2>Reports</h2>
+
+      <p>Total Products: 125</p>
+      <p>Total Stock: 850 items</p>
+      <p>Low Stock Products: 8</p>
+      <p>Total Inventory Value: €12,500</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Inventory Management System &copy; 2026</p>
+  </footer>
+
+</body>
+
 </html>
